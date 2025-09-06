@@ -25,7 +25,7 @@
             transform: translateY(-5px);
         }
         .bg-rajasthan {
-            background-image: url('https://placehold.co/1200x400/FDBA74/fff?text=Diwali+Trip');
+            background-image: url('https://placehold.co/1200x400/FDBA74/fff?text=Happy+Diwali');
             background-size: cover;
             background-position: center;
         }
@@ -51,7 +51,8 @@
         }
         .trip-header {
             color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            font-size: 3rem;
         }
         .fade-out {
             opacity: 0;
@@ -66,7 +67,7 @@
 
         <!-- Header Section -->
         <div class="bg-rajasthan rounded-3xl p-8 mb-8 flex items-center justify-center">
-            <h1 class="text-5xl md:text-6xl font-extrabold text-center drop-shadow-lg trip-header">
+            <h1 class="font-extrabold text-center drop-shadow-lg trip-header">
                 Diwali in Rajasthan
             </h1>
         </div>
@@ -127,35 +128,38 @@
                 <div>
                     <h3 id="day1Title" class="text-xl font-semibold text-gray-700">Day 1: Oct 22nd - Ahmedabad to Udaipur</h3>
                     <p id="day1Text" class="text-gray-600">
-                        Start the journey from Ahmedabad in the morning. Enjoy the scenic drive to Udaipur. Check into the hotel and get ready for a magical evening. Explore the illuminated City Palace and take a romantic boat ride on Lake Pichola to see the beautiful lights.
+                        <span class="font-semibold">Travel:</span> Drive from Ahmedabad to Udaipur (approx. 260 km, 5-6 hours).<br>
+                        <span class="font-semibold">Itinerary:</span> Arrive in Udaipur. Check in and relax for about an hour. In the evening (3-4 hours), explore the beautifully lit City Palace and enjoy a boat ride on Lake Pichola to view the Diwali lights.
                     </p>
                 </div>
                 <!-- Day 2 -->
                 <div>
                     <h3 id="day2Title" class="text-xl font-semibold text-gray-700">Day 2: Oct 23rd - Exploring Udaipur</h3>
                     <p id="day2Text" class="text-gray-600">
-                        Spend the day sightseeing in Udaipur. Visit the majestic City Palace, the peaceful Jagdish Temple, and the beautiful Saheliyon Ki Bari. The day is yours to explore the city's rich history and culture.
+                        <span class="font-semibold">Itinerary:</span> Spend a full day in Udaipur. Visit the majestic City Palace (approx. 2-3 hours), the serene Jagdish Temple (approx. 1 hour), and the charming Saheliyon Ki Bari (approx. 1-2 hours). The rest of the day is free for shopping or exploring.
                     </p>
                 </div>
                 <!-- Day 3 -->
                 <div>
                     <h3 id="day3Title" class="text-xl font-semibold text-gray-700">Day 3: Oct 24th - Udaipur to Mount Abu</h3>
                     <p id="day3Text" class="text-gray-600">
-                        After a relaxed morning in Udaipur, drive to Mount Abu, the only hill station in Rajasthan. Check into your hotel and then head out to watch a breathtaking sunset from Sunset Point.
+                        <span class="font-semibold">Travel:</span> Drive from Udaipur to Mount Abu (approx. 180 km, 3-4 hours).<br>
+                        <span class="font-semibold">Itinerary:</span> Check out after breakfast. Arrive in Mount Abu in the afternoon. Relax at the hotel for a bit (approx. 1 hour). In the evening (approx. 2-3 hours), head to Sunset Point for a breathtaking view and then enjoy a leisurely boat ride on Nakki Lake.
                     </p>
                 </div>
                 <!-- Day 4 -->
                 <div>
                     <h3 id="day4Title" class="text-xl font-semibold text-gray-700">Day 4: Oct 25th - Mount Abu Exploration</h3>
                     <p id="day4Text" class="text-gray-600">
-                        This day is all about Mount Abu's top sights. Visit the stunning Dilwara Jain Temples, known for their intricate carvings. Drive up to Guru Shikhar for panoramic views and find inner peace at the Brahma Kumaris Peace Park. In the evening, take a leisurely boat ride on Nakki Lake.
+                        <span class="font-semibold">Itinerary:</span> Spend a full day exploring Mount Abu. Visit the stunning Dilwara Jain Temples (approx. 2-3 hours) in the morning. Then drive to Guru Shikhar (approx. 1 hour drive each way + 1-2 hours at the top) for panoramic views. Visit the Brahma Kumaris Peace Park (approx. 1 hour) for a peaceful break.
                     </p>
                 </div>
                 <!-- Day 5 -->
                 <div>
                     <h3 id="day5Title" class="text-xl font-semibold text-gray-700">Day 5: Oct 26th - Mount Abu to Ahmedabad</h3>
                     <p id="day5Text" class="text-gray-600">
-                        Enjoy one last breakfast in Mount Abu. Begin the journey back to Ahmedabad. You can stop at the Ambaji Temple on the way back for a final stop before reaching home, filled with wonderful memories.
+                        <span class="font-semibold">Travel:</span> Drive back from Mount Abu to Ahmedabad (approx. 230 km, 5-6 hours).<br>
+                        <span class="font-semibold">Itinerary:</span> Check out of your hotel in the morning. Begin the journey back to Ahmedabad. You can stop at the Ambaji Temple on the way back for a final stop before reaching home.
                     </p>
                 </div>
             </div>
@@ -170,23 +174,23 @@
                 days: [
                     {
                         title: "Day 1: Oct 22nd - Ahmedabad to Udaipur",
-                        text: "Start the journey from Ahmedabad in the morning. Enjoy the scenic drive to Udaipur. Check into the hotel and get ready for a magical evening. Explore the illuminated City Palace and take a romantic boat ride on Lake Pichola to see the beautiful lights."
+                        text: "<span class='font-semibold'>Travel:</span> Drive from Ahmedabad to Udaipur (approx. 260 km, 5-6 hours).<br><span class='font-semibold'>Itinerary:</span> Arrive in Udaipur. Check in and relax for about an hour. In the evening (3-4 hours), explore the illuminated City Palace and take a boat ride on Lake Pichola to view the Diwali lights."
                     },
                     {
                         title: "Day 2: Oct 23rd - Exploring Udaipur",
-                        text: "Spend the day sightseeing in Udaipur. Visit the majestic City Palace, the peaceful Jagdish Temple, and the beautiful Saheliyon Ki Bari. The day is yours to explore the city's rich history and culture."
+                        text: "<span class='font-semibold'>Itinerary:</span> Spend a full day in Udaipur. Visit the majestic City Palace (approx. 2-3 hours), the serene Jagdish Temple (approx. 1 hour), and the charming Saheliyon Ki Bari (approx. 1-2 hours). The rest of the day is free for shopping or exploring."
                     },
                     {
                         title: "Day 3: Oct 24th - Udaipur to Mount Abu",
-                        text: "After a relaxed morning in Udaipur, drive to Mount Abu, the only hill station in Rajasthan. Check into your hotel and then head out to watch a breathtaking sunset from Sunset Point."
+                        text: "<span class='font-semibold'>Travel:</span> Drive from Udaipur to Mount Abu (approx. 180 km, 3-4 hours).<br><span class='font-semibold'>Itinerary:</span> Check out after breakfast. Arrive in Mount Abu in the afternoon. Relax at the hotel for a bit (approx. 1 hour). In the evening (approx. 2-3 hours), head to Sunset Point for a breathtaking view and then enjoy a leisurely boat ride on Nakki Lake."
                     },
                     {
                         title: "Day 4: Oct 25th - Mount Abu Exploration",
-                        text: "This day is all about Mount Abu's top sights. Visit the stunning Dilwara Jain Temples, known for their intricate carvings. Drive up to Guru Shikhar for panoramic views and find inner peace at the Brahma Kumaris Peace Park. In the evening, take a leisurely boat ride on Nakki Lake."
+                        text: "<span class='font-semibold'>Itinerary:</span> Spend a full day exploring Mount Abu. Visit the stunning Dilwara Jain Temples (approx. 2-3 hours) in the morning. Then drive to Guru Shikhar (approx. 1 hour drive each way + 1-2 hours at the top) for panoramic views. Visit the Brahma Kumaris Peace Park (approx. 1 hour) for a peaceful break."
                     },
                     {
                         title: "Day 5: Oct 26th - Mount Abu to Ahmedabad",
-                        text: "Enjoy one last breakfast in Mount Abu. Begin the journey back to Ahmedabad. You can stop at the Ambaji Temple on the way back for a final stop before reaching home, filled with wonderful memories."
+                        text: "<span class='font-semibold'>Travel:</span> Drive back from Mount Abu to Ahmedabad (approx. 230 km, 5-6 hours).<br><span class='font-semibold'>Itinerary:</span> Check out of your hotel in the morning. Begin the journey back to Ahmedabad. You can stop at the Ambaji Temple on the way back for a final stop before reaching home."
                     }
                 ]
             },
@@ -196,23 +200,23 @@
                 days: [
                     {
                         title: "पहला दिन: 22 अक्टूबर - अहमदाबाद से उदयपुर",
-                        text: "सुबह अहमदाबाद से यात्रा शुरू करें। उदयपुर के सुंदर ड्राइव का आनंद लें। होटल में चेक-इन करें और एक जादुई शाम के लिए तैयार हो जाएं। जगमगाते सिटी पैलेस का अन्वेषण करें और झील पिछोला पर एक रोमांटिक नाव की सवारी का आनंद लें, ताकि खूबसूरत रोशनी देख सकें।"
+                        text: "<span class='font-semibold'>यात्रा:</span> अहमदाबाद से उदयपुर तक ड्राइव करें (लगभग 260 किमी, 5-6 घंटे)।<br><span class='font-semibold'>यात्रा कार्यक्रम:</span> उदयपुर पहुंचें। चेक-इन करें और लगभग एक घंटे के लिए आराम करें। शाम को (3-4 घंटे), जगमगाते सिटी पैलेस का अन्वेषण करें और दीवाली की रोशनी देखने के लिए झील पिछोला पर नाव की सवारी का आनंद लें।"
                     },
                     {
                         title: "दूसरा दिन: 23 अक्टूबर - उदयपुर का अन्वेषण",
-                        text: "दिन उदयपुर में दर्शनीय स्थलों की यात्रा में बिताएं। राजसी सिटी पैलेस, शांतिपूर्ण जगदीशी मंदिर और सुंदर सहेलियों की बारी का दौरा करें। दिन आपके लिए है, ताकि आप शहर के समृद्ध इतिहास और संस्कृति का अन्वेषण कर सकें।"
+                        text: "<span class='font-semibold'>यात्रा कार्यक्रम:</span> उदयपुर में पूरा दिन बिताएं। राजसी सिटी पैलेस (लगभग 2-3 घंटे), शांतिपूर्ण जगदीशी मंदिर (लगभग 1 घंटा), और सुंदर सहेलियों की बारी (लगभग 1-2 घंटे) का दौरा करें। दिन का बाकी समय खरीदारी या घूमने के लिए स्वतंत्र है।"
                     },
                     {
                         title: "तीसरा दिन: 24 अक्टूबर - उदयपुर से माउंट आबू",
-                        text: "उदयपुर में एक आरामदायक सुबह के बाद, राजस्थान के एकमात्र हिल स्टेशन माउंट आबू के लिए ड्राइव करें। अपने होटल में चेक-इन करें और फिर सूर्यास्त बिंदु से एक लुभावनी सूर्यास्त देखने के लिए बाहर निकलें।"
+                        text: "<span class='font-semibold'>यात्रा:</span> उदयपुर से माउंट आबू तक ड्राइव करें (लगभग 180 किमी, 3-4 घंटे)।<br><span class='font-semibold'>यात्रा कार्यक्रम:</span> नाश्ते के बाद चेक आउट करें। दोपहर में माउंट आबू पहुंचें। होटल में थोड़ी देर आराम करें (लगभग 1 घंटा)। शाम को (लगभग 2-3 घंटे), लुभावनी सूर्यास्त देखने के लिए सूर्यास्त बिंदु पर जाएं और फिर नक्की झील पर नाव की आरामदायक सवारी का आनंद लें।"
                     },
                     {
                         title: "चौथा दिन: 25 अक्टूबर - माउंट आबू का अन्वेषण",
-                        text: "यह दिन माउंट आबू के शीर्ष स्थलों के बारे में है। उनकी जटिल नक्काशी के लिए प्रसिद्ध शानदार दिलवाड़ा जैन मंदिरों का दौरा करें। मनोरम दृश्यों के लिए गुरु शिखर तक ड्राइव करें और ब्रह्मा कुमारिस शांति पार्क में आंतरिक शांति पाएं। शाम को, नक्की झील पर एक आरामदायक नाव की सवारी करें।"
+                        text: "<span class='font-semibold'>यात्रा कार्यक्रम:</span> माउंट आबू का पूरा दिन अन्वेषण करें। सुबह शानदार दिलवाड़ा जैन मंदिरों (लगभग 2-3 घंटे) का दौरा करें, जो अपनी जटिल नक्काशी के लिए जाने जाते हैं। फिर मनोरम दृश्यों के लिए गुरु शिखर तक ड्राइव करें (लगभग 1 घंटे का ड्राइव प्रत्येक रास्ता + शीर्ष पर 1-2 घंटे)। ब्रह्मा कुमारिस शांति पार्क (लगभग 1 घंटा) का दौरा करें ताकि शांतिपूर्ण विश्राम मिल सके।"
                     },
                     {
                         title: "पांचवां दिन: 26 अक्टूबर - माउंट आबू से अहमदाबाद",
-                        text: "माउंट आबू में एक आखिरी नाश्ते का आनंद लें। अहमदाबाद वापस यात्रा शुरू करें। आप रास्ते में अंबाजी मंदिर में रुक सकते हैं, जो घर वापस आने से पहले एक अंतिम पड़ाव है, जो अद्भुत यादों से भरा हुआ है।"
+                        text: "<span class='font-semibold'>यात्रा:</span> माउंट आबू से अहमदाबाद तक वापस ड्राइव करें (लगभग 230 किमी, 5-6 घंटे)।<br><span class='font-semibold'>यात्रा कार्यक्रम:</span> सुबह अपने होटल से चेक आउट करें। अहमदाबाद वापस यात्रा शुरू करें। आप घर पहुंचने से पहले, रास्ते में अंबाजी मंदिर में एक अंतिम पड़ाव के लिए रुक सकते हैं।"
                     }
                 ]
             },
@@ -222,23 +226,23 @@
                 days: [
                     {
                         title: "દિવસ 1: 22 ઓક્ટોબર - અમદાવાદથી ઉદયપુર",
-                        text: "સવારે અમદાવાદથી પ્રવાસ શરૂ કરો. ઉદયપુરના સુંદર ડ્રાઇવનો આનંદ લો. હોટેલમાં ચેક-ઇન કરો અને જાદુઈ સાંજ માટે તૈયાર થાઓ. ઝળહળતા સિટી પેલેસનું અન્વેષણ કરો અને સુંદર લાઇટ્સ જોવા માટે લેક પિછોલા પર રોમેન્ટિક બોટ રાઇડનો આનંદ લો."
+                        text: "<span class='font-semibold'>પ્રવાસ:</span> અમદાવાદથી ઉદયપુર સુધી ડ્રાઇવ કરો (લગભગ 260 કિમી, 5-6 કલાક)。<br><span class='font-semibold'>પ્રવાસ કાર્યક્રમ:</span> ઉદયપુર પહોંચો. ચેક-ઇન કરો અને લગભગ એક કલાક માટે આરામ કરો. સાંજે (3-4 કલાક), ઝળહળતા સિટી પેલેસનું અન્વેષણ કરો અને દિવાળીની લાઇટ્સ જોવા માટે લેક પિછોલા પર બોટ રાઇડનો આનંદ લો."
                     },
                     {
                         title: "દિવસ 2: 23 ઓક્ટોબર - ઉદયપુરનું અન્વેષણ",
-                        text: "દિવસ ઉદયપુરમાં ફરવા માટે વિતાવો. રાજવી સિટી પેલેસ, શાંતિપૂર્ણ જગદીશ મંદિર અને સુંદર સહેલિયોં કી બારીની મુલાકાત લો. શહેરના સમૃદ્ધ ઇતિહાસ અને સંસ્કૃતિને અન્વેષણ કરવા માટે દિવસ તમારો છે."
+                        text: "<span class='font-semibold'>પ્રવાસ કાર્યક્રમ:</span> ઉદયપુરમાં આખો દિવસ વિતાવો. રાજવી સિટી પેલેસ (લગભગ 2-3 કલાક), શાંતિપૂર્ણ જગદીશ મંદિર (લગભગ 1 કલાક), અને સુંદર સહેલિયોં કી બારી (લગભગ 1-2 કલાક) ની મુલાકાત લો. દિવસનો બાકીનો સમય ખરીદી કરવા અથવા ફરવા માટે મુક્ત છે."
                     },
                     {
                         title: "દિવસ 3: 24 ઓક્ટોબર - ઉદયપુરથી માઉન્ટ આબુ",
-                        text: "ઉદયપુરમાં આરામદાયક સવાર પછી, રાજસ્થાનના એકમાત્ર હિલ સ્ટેશન માઉન્ટ આબુ માટે ડ્રાઇવ કરો. તમારી હોટેલમાં ચેક-ઇન કરો અને પછી સનસેટ પોઈન્ટથી મનોહર સૂર્યાસ્ત જોવા માટે બહાર નીકળો."
+                        text: "<span class='font-semibold'>પ્રવાસ:</span> ઉદયપુરથી માઉન્ટ આબુ સુધી ડ્રાઇવ કરો (લગભગ 180 કિમી, 3-4 કલાક)。<br><span class='font-semibold'>પ્રવાસ કાર્યક્રમ:</span> નાસ્તા પછી ચેક-આઉટ કરો. બપોરે માઉન્ટ આબુ પહોંચો. હોટેલમાં થોડી વાર આરામ કરો (લગભગ 1 કલાક). સાંજે (લગભગ 2-3 કલાક), મનોહર સૂર્યાસ્ત જોવા માટે સનસેટ પોઈન્ટ પર જાઓ અને પછી નકી તળાવ પર આરામદાયક બોટ રાઇડનો આનંદ લો."
                     },
                     {
                         title: "દિવસ 4: 25 ઓક્ટોબર - માઉન્ટ આબુનું અન્વેષણ",
-                        text: "આ દિવસ માઉન્ટ આબુના ટોચના સ્થળો વિશે છે. તેમના જટિલ કોતરણી માટે જાણીતા અદ્ભુત દિલવાડા જૈન મંદિરોની મુલાકાત લો. મનોહર દૃશ્યો માટે ગુરુ શિખર સુધી ડ્રાઇવ કરો અને બ્રહ્મા કુમારીસ પીસ પાર્કમાં આંતરિક શાંતિ મેળવો. સાંજે, નકી તળાવ પર આરામદાયક બોટ રાઇડ કરો."
+                        text: "<span class='font-semibold'>પ્રવાસ કાર્યક્રમ:</span> માઉન્ટ આબુનો આખો દિવસ અન્વેષણ કરો. સવારે અદ્ભુત દિલવાડા જૈન મંદિરોની મુલાકાત લો (લગભગ 2-3 કલાક), જે તેમની જટિલ કોતરણી માટે જાણીતા છે. પછી મનોહર દૃશ્યો માટે ગુરુ શિખર સુધી ડ્રાઇવ કરો (દરેક રસ્તા માટે 1 કલાકનો ડ્રાઇવ + ટોચ પર 1-2 કલાક). શાંતિપૂર્ણ વિરામ માટે બ્રહ્મા કુમારીસ પીસ પાર્ક (લગભગ 1 કલાક) ની મુલાકાત લો."
                     },
                     {
                         title: "દિવસ 5: 26 ઓક્ટોબર - માઉન્ટ આબુથી અમદાવાદ",
-                        text: "માઉન્ટ આબુમાં છેલ્લો નાસ્તો માણવો. અમદાવાદ પાછા પ્રવાસ શરૂ કરો. તમે ઘરે પાછા ફરતા પહેલા, અદ્ભુત યાદોથી ભરપૂર, રસ્તામાં અંબાજી મંદિર પર રોકાઈ શકો છો."
+                        text: "<span class='font-semibold'>પ્રવાસ:</span> માઉન્ટ આબુથી અમદાવાદ સુધી પાછા ડ્રાઇવ કરો (લગભગ 230 કિમી, 5-6 કલાક)。<br><span class='font-semibold'>પ્રવાસ કાર્યક્રમ:</span> સવારે તમારી હોટેલમાંથી ચેક-આઉટ કરો. અમદાવાદ પાછા પ્રવાસ શરૂ કરો. તમે ઘરે પહોંચતા પહેલા, રસ્તામાં અંબાજી મંદિર પર એક અંતિમ સ્ટોપ માટે રોકાઈ શકો છો।"
                     }
                 ]
             }
@@ -294,19 +298,19 @@
             document.getElementById('romanticLine').innerText = content.romantic;
             
             document.getElementById('day1Title').innerText = content.days[0].title;
-            document.getElementById('day1Text').innerText = content.days[0].text;
+            document.getElementById('day1Text').innerHTML = content.days[0].text;
             
             document.getElementById('day2Title').innerText = content.days[1].title;
-            document.getElementById('day2Text').innerText = content.days[1].text;
+            document.getElementById('day2Text').innerHTML = content.days[1].text;
             
             document.getElementById('day3Title').innerText = content.days[2].title;
-            document.getElementById('day3Text').innerText = content.days[2].text;
+            document.getElementById('day3Text').innerHTML = content.days[2].text;
 
             document.getElementById('day4Title').innerText = content.days[3].title;
-            document.getElementById('day4Text').innerText = content.days[3].text;
+            document.getElementById('day4Text').innerHTML = content.days[3].text;
 
             document.getElementById('day5Title').innerText = content.days[4].title;
-            document.getElementById('day5Text').innerText = content.days[4].text;
+            document.getElementById('day5Text').innerHTML = content.days[4].text;
         }
 
         document.addEventListener('DOMContentLoaded', () => {
