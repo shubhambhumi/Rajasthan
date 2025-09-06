@@ -54,6 +54,11 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transform: scale(0.8);
+        }
     </style>
 </head>
 <body class="p-6">
@@ -68,48 +73,54 @@
         </div>
         
         <!-- "Who are you?" Section -->
-        <div class="text-center mb-10">
-            <h2 class="text-gray-600 text-lg md:text-xl">Who are you?</h2>
-        </div>
-
-        <!-- Couples Section -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-center">
-            <!-- Sarvesh & Wife -->
-            <div class="card p-6 flex flex-col items-center" onclick="togglePlan()">
-                <div class="avatar-container mb-4">
-                    <span class="text-6xl" role="img" aria-label="Couple emoji">💑</span>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-800">Sarvesh & Wife</h3>
-                <p class="text-gray-500">The coordinators of the trip!</p>
+        <div id="selection-screen">
+            <div class="text-center mb-10">
+                <h2 class="text-gray-600 text-lg md:text-xl">Who are you?</h2>
             </div>
 
-            <!-- Shubham & Bhumi -->
-            <div class="card p-6 flex flex-col items-center" onclick="togglePlan()">
-                <div class="avatar-container avatar-container-shubham mb-4">
-                    <span class="text-6xl text-red-600" role="img" aria-label="Heart emoji">❤️</span>
+            <!-- Couples Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-center" id="couples-container">
+                <!-- Sarvesh & Wife -->
+                <div id="card-sarvesh" class="card p-6 flex flex-col items-center" onclick="showPlan('sarvesh')">
+                    <div class="avatar-container mb-4">
+                        <span class="text-6xl" role="img" aria-label="Couple emoji">💑</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">Sarvesh & Wife</h3>
+                    <p class="text-gray-500">The coordinators of the trip!</p>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800">Shubham & Bhumi</h3>
-                <p class="text-gray-500">The fun-loving adventurers!</p>
-            </div>
 
-            <!-- Rupal & Atul -->
-            <div class="card p-6 flex flex-col items-center" onclick="togglePlan()">
-                <div class="avatar-container avatar-container-rupal mb-4">
-                    <span class="text-6xl" role="img" aria-label="Couple emoji">💏</span>
+                <!-- Shubham & Bhumi -->
+                <div id="card-shubham" class="card p-6 flex flex-col items-center" onclick="showPlan('shubham')">
+                    <div class="avatar-container avatar-container-shubham mb-4">
+                        <span class="text-6xl text-red-600" role="img" aria-label="Heart emoji">❤️</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">Shubham & Bhumi</h3>
+                    <p class="text-gray-500">The fun-loving adventurers!</p>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800">Rupal & Atul</h3>
-                <p class="text-gray-500">The planners with the best taste!</p>
+
+                <!-- Rupal & Atul -->
+                <div id="card-rupal" class="card p-6 flex flex-col items-center" onclick="showPlan('rupal')">
+                    <div class="avatar-container avatar-container-rupal mb-4">
+                        <span class="text-6xl" role="img" aria-label="Couple emoji">💏</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">Rupal & Atul</h3>
+                    <p class="text-gray-500">The planners with the best taste!</p>
+                </div>
             </div>
         </div>
 
         <!-- Itinerary Section - Initially Hidden -->
         <div id="detailedPlan" class="card p-8 mb-8 hidden">
-            <div class="flex justify-end mb-4">
+            <div class="flex justify-between items-center mb-4">
+                <button class="text-gray-500 hover:text-gray-700 font-semibold py-2 px-4 rounded-full border border-gray-300 transition-colors" onclick="goBack()">Back</button>
                 <select id="languageSelector" class="rounded-lg p-2 border border-gray-300">
                     <option value="en">English</option>
                     <option value="hi">Hindi</option>
                     <option value="gu">Gujarati</option>
                 </select>
+            </div>
+            <div class="text-center mb-6">
+                <p id="romanticLine" class="text-lg italic text-gray-700"></p>
             </div>
             <h2 id="itineraryTitle" class="text-3xl font-bold text-gray-800 mb-6 text-center">Our 5-Day Road Trip Itinerary</h2>
             <div class="space-y-8" id="itineraryContent">
@@ -156,6 +167,7 @@
         const itinerary = {
             en: {
                 title: "Our 5-Day Road Trip Itinerary",
+                romantic: "In Rajasthan, every palace tells a love story, and every desert sunset paints a new beginning for us.",
                 days: [
                     {
                         title: "Day 1: Oct 22nd - Ahmedabad to Udaipur",
@@ -181,6 +193,7 @@
             },
             hi: {
                 title: "हमारी 5-दिवसीय रोड ट्रिप यात्रा योजना",
+                romantic: "राजस्थान में हर महल एक प्रेम कहानी कहता है, और हर रेगिस्तान का सूर्यास्त हमारे लिए एक नई शुरुआत करता है।",
                 days: [
                     {
                         title: "पहला दिन: 22 अक्टूबर - अहमदाबाद से उदयपुर",
@@ -206,6 +219,7 @@
             },
             gu: {
                 title: "અમારી 5-દિવસીય રોડ ટ્રિપનો પ્રવાસ",
+                romantic: "રાજસ્થાનમાં દરેક મહેલ એક પ્રેમ કહાની કહે છે, અને દરેક રણનો સૂર્યાસ્ત આપણા માટે એક નવી શરૂઆત કરે છે.",
                 days: [
                     {
                         title: "દિવસ 1: 22 ઓક્ટોબર - અમદાવાદથી ઉદયપુર",
@@ -231,9 +245,46 @@
             }
         };
 
-        function togglePlan() {
-            const plan = document.getElementById('detailedPlan');
-            plan.classList.remove('hidden');
+        const romanticLines = {
+            sarvesh: "The desert wind whispers tales of our journey, and every monument stands as a testament to our bond.",
+            shubham: "In Rajasthan, every palace tells a love story, and every desert sunset paints a new beginning for us.",
+            rupal: "Together, we will get lost in the vibrant colors of Rajasthan, where every moment is a beautiful memory."
+        };
+
+        function showPlan(coupleName) {
+            const couplesContainer = document.getElementById('couples-container');
+            const detailedPlan = document.getElementById('detailedPlan');
+            const cards = couplesContainer.children;
+            const selectedRomanticLine = romanticLines[coupleName];
+            
+            // Add fade-out effect to unselected cards
+            for (let i = 0; i < cards.length; i++) {
+                if (cards[i].id !== `card-${coupleName}`) {
+                    cards[i].classList.add('fade-out');
+                }
+            }
+
+            // Hide the selection screen and show the detailed plan after animation
+            setTimeout(() => {
+                document.getElementById('selection-screen').classList.add('hidden');
+                detailedPlan.classList.remove('hidden');
+                document.getElementById('romanticLine').innerText = selectedRomanticLine;
+            }, 500); // Wait for the fade-out animation
+        }
+
+        function goBack() {
+            const couplesContainer = document.getElementById('couples-container');
+            const detailedPlan = document.getElementById('detailedPlan');
+            const cards = couplesContainer.children;
+
+            // Show the selection screen and hide the detailed plan
+            detailedPlan.classList.add('hidden');
+            document.getElementById('selection-screen').classList.remove('hidden');
+
+            // Remove fade-out effect to show all cards again
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].classList.remove('fade-out');
+            }
         }
 
         function changeLanguage() {
@@ -241,6 +292,7 @@
             const content = itinerary[language];
 
             document.getElementById('itineraryTitle').innerText = content.title;
+            document.getElementById('romanticLine').innerText = content.romantic;
             
             document.getElementById('day1Title').innerText = content.days[0].title;
             document.getElementById('day1Text').innerText = content.days[0].text;
@@ -258,9 +310,9 @@
             document.getElementById('day5Text').innerText = content.days[4].text;
         }
 
-        // Add event listener after the DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('languageSelector').addEventListener('change', changeLanguage);
+            changeLanguage(); // Set initial language and romantic line
         });
 
     </script>
