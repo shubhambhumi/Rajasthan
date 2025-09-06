@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diwali in Rajasthan - Road Trip</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom right, #fef3c7, #fff7ed);
+        }
+        .container {
+            max-width: 900px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .bg-rajasthan {
+            background-image: url('https://placehold.co/1200x400/FDBA74/fff?text=Diwali+in+Rajasthan');
+            background-size: cover;
+            background-position: center;
+        }
+        .avatar-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #fbd38d;
+            border: 4px solid #f6e0b7;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+        }
+        .avatar-container-shubham {
+            background-color: #fca5a5;
+            border: 4px solid #fecaca;
+        }
+        .avatar-container-rupal {
+            background-color: #a5b4fc;
+            border: 4px solid #c7d2fe;
+        }
+        .trip-header {
+            background: linear-gradient(to right, #f97316, #fb923c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="p-6">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <!-- Header Section -->
+        <div class="bg-rajasthan rounded-3xl p-8 mb-8 flex items-center justify-center">
+            <h1 class="text-white text-5xl md:text-6xl font-extrabold text-center drop-shadow-lg">
+                <span class="trip-header">Diwali in Rajasthan</span>
+            </h1>
+        </div>
+        
+        <!-- "Who are you?" Section -->
+        <div class="text-center mb-10">
+            <h2 class="text-gray-600 text-lg md:text-xl">Who are you?</h2>
+        </div>
+
+        <!-- Couples Section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-center">
+            <!-- Sarvesh & Wife -->
+            <div class="card p-6 flex flex-col items-center" onclick="togglePlan()">
+                <div class="avatar-container mb-4">
+                    <span class="text-6xl" role="img" aria-label="Couple emoji">💑</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Sarvesh & Wife</h3>
+                <p class="text-gray-500">The coordinators of the trip!</p>
+            </div>
+
+            <!-- Shubham & Bhumi -->
+            <div class="card p-6 flex flex-col items-center" onclick="togglePlan()">
+                <div class="avatar-container avatar-container-shubham mb-4">
+                    <span class="text-6xl text-red-600" role="img" aria-label="Heart emoji">❤️</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Shubham & Bhumi</h3>
+                <p class="text-gray-500">The fun-loving adventurers!</p>
+            </div>
+
+            <!-- Rupal & Atul -->
+            <div class="card p-6 flex flex-col items-center" onclick="togglePlan()">
+                <div class="avatar-container avatar-container-rupal mb-4">
+                    <span class="text-6xl" role="img" aria-label="Couple emoji">💏</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Rupal & Atul</h3>
+                <p class="text-gray-500">The planners with the best taste!</p>
+            </div>
+        </div>
+
+        <!-- Itinerary Section - Initially Hidden -->
+        <div id="detailedPlan" class="card p-8 mb-8 hidden">
+            <div class="flex justify-end mb-4">
+                <select id="languageSelector" class="rounded-lg p-2 border border-gray-300">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="gu">Gujarati</option>
+                </select>
+            </div>
+            <h2 id="itineraryTitle" class="text-3xl font-bold text-gray-800 mb-6 text-center">Our 5-Day Road Trip Itinerary</h2>
+            <div class="space-y-8" id="itineraryContent">
+                <!-- Day 1 -->
+                <div>
+                    <h3 id="day1Title" class="text-xl font-semibold text-gray-700">Day 1: Oct 22nd - Ahmedabad to Udaipur</h3>
+                    <p id="day1Text" class="text-gray-600">
+                        Start the journey from Ahmedabad in the morning. Enjoy the scenic drive to Udaipur. Check into the hotel and get ready for a magical evening. Explore the illuminated City Palace and take a romantic boat ride on Lake Pichola to see the beautiful lights.
+                    </p>
+                </div>
+                <!-- Day 2 -->
+                <div>
+                    <h3 id="day2Title" class="text-xl font-semibold text-gray-700">Day 2: Oct 23rd - Exploring Udaipur</h3>
+                    <p id="day2Text" class="text-gray-600">
+                        Spend the day sightseeing in Udaipur. Visit the majestic City Palace, the peaceful Jagdish Temple, and the beautiful Saheliyon Ki Bari. The day is yours to explore the city's rich history and culture.
+                    </p>
+                </div>
+                <!-- Day 3 -->
+                <div>
+                    <h3 id="day3Title" class="text-xl font-semibold text-gray-700">Day 3: Oct 24th - Udaipur to Mount Abu</h3>
+                    <p id="day3Text" class="text-gray-600">
+                        After a relaxed morning in Udaipur, drive to Mount Abu, the only hill station in Rajasthan. Check into your hotel and then head out to watch a breathtaking sunset from Sunset Point.
+                    </p>
+                </div>
+                <!-- Day 4 -->
+                <div>
+                    <h3 id="day4Title" class="text-xl font-semibold text-gray-700">Day 4: Oct 25th - Mount Abu Exploration</h3>
+                    <p id="day4Text" class="text-gray-600">
+                        This day is all about Mount Abu's top sights. Visit the stunning Dilwara Jain Temples, known for their intricate carvings. Drive up to Guru Shikhar for panoramic views and find inner peace at the Brahma Kumaris Peace Park. In the evening, take a leisurely boat ride on Nakki Lake.
+                    </p>
+                </div>
+                <!-- Day 5 -->
+                <div>
+                    <h3 id="day5Title" class="text-xl font-semibold text-gray-700">Day 5: Oct 26th - Mount Abu to Ahmedabad</h3>
+                    <p id="day5Text" class="text-gray-600">
+                        Enjoy one last breakfast in Mount Abu. Begin the journey back to Ahmedabad. You can stop at the Ambaji Temple on the way back for a final stop before reaching home, filled with wonderful memories.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const itinerary = {
+            en: {
+                title: "Our 5-Day Road Trip Itinerary",
+                days: [
+                    {
+                        title: "Day 1: Oct 22nd - Ahmedabad to Udaipur",
+                        text: "Start the journey from Ahmedabad in the morning. Enjoy the scenic drive to Udaipur. Check into the hotel and get ready for a magical evening. Explore the illuminated City Palace and take a romantic boat ride on Lake Pichola to see the beautiful lights."
+                    },
+                    {
+                        title: "Day 2: Oct 23rd - Exploring Udaipur",
+                        text: "Spend the day sightseeing in Udaipur. Visit the majestic City Palace, the peaceful Jagdish Temple, and the beautiful Saheliyon Ki Bari. The day is yours to explore the city's rich history and culture."
+                    },
+                    {
+                        title: "Day 3: Oct 24th - Udaipur to Mount Abu",
+                        text: "After a relaxed morning in Udaipur, drive to Mount Abu, the only hill station in Rajasthan. Check into your hotel and then head out to watch a breathtaking sunset from Sunset Point."
+                    },
+                    {
+                        title: "Day 4: Oct 25th - Mount Abu Exploration",
+                        text: "This day is all about Mount Abu's top sights. Visit the stunning Dilwara Jain Temples, known for their intricate carvings. Drive up to Guru Shikhar for panoramic views and find inner peace at the Brahma Kumaris Peace Park. In the evening, take a leisurely boat ride on Nakki Lake."
+                    },
+                    {
+                        title: "Day 5: Oct 26th - Mount Abu to Ahmedabad",
+                        text: "Enjoy one last breakfast in Mount Abu. Begin the journey back to Ahmedabad. You can stop at the Ambaji Temple on the way back for a final stop before reaching home, filled with wonderful memories."
+                    }
+                ]
+            },
+            hi: {
+                title: "हमारी 5-दिवसीय रोड ट्रिप यात्रा योजना",
+                days: [
+                    {
+                        title: "पहला दिन: 22 अक्टूबर - अहमदाबाद से उदयपुर",
+                        text: "सुबह अहमदाबाद से यात्रा शुरू करें। उदयपुर के सुंदर ड्राइव का आनंद लें। होटल में चेक-इन करें और एक जादुई शाम के लिए तैयार हो जाएं। जगमगाते सिटी पैलेस का अन्वेषण करें और झील पिछोला पर एक रोमांटिक नाव की सवारी का आनंद लें, ताकि खूबसूरत रोशनी देख सकें।"
+                    },
+                    {
+                        title: "दूसरा दिन: 23 अक्टूबर - उदयपुर का अन्वेषण",
+                        text: "दिन उदयपुर में दर्शनीय स्थलों की यात्रा में बिताएं। राजसी सिटी पैलेस, शांतिपूर्ण जगदीशी मंदिर और सुंदर सहेलियों की बारी का दौरा करें। दिन आपके लिए है, ताकि आप शहर के समृद्ध इतिहास और संस्कृति का अन्वेषण कर सकें।"
+                    },
+                    {
+                        title: "तीसरा दिन: 24 अक्टूबर - उदयपुर से माउंट आबू",
+                        text: "उदयपुर में एक आरामदायक सुबह के बाद, राजस्थान के एकमात्र हिल स्टेशन माउंट आबू के लिए ड्राइव करें। अपने होटल में चेक-इन करें और फिर सूर्यास्त बिंदु से एक लुभावनी सूर्यास्त देखने के लिए बाहर निकलें।"
+                    },
+                    {
+                        title: "चौथा दिन: 25 अक्टूबर - माउंट आबू का अन्वेषण",
+                        text: "यह दिन माउंट आबू के शीर्ष स्थलों के बारे में है। उनकी जटिल नक्काशी के लिए प्रसिद्ध शानदार दिलवाड़ा जैन मंदिरों का दौरा करें। मनोरम दृश्यों के लिए गुरु शिखर तक ड्राइव करें और ब्रह्मा कुमारिस शांति पार्क में आंतरिक शांति पाएं। शाम को, नक्की झील पर एक आरामदायक नाव की सवारी करें।"
+                    },
+                    {
+                        title: "पांचवां दिन: 26 अक्टूबर - माउंट आबू से अहमदाबाद",
+                        text: "माउंट आबू में एक आखिरी नाश्ते का आनंद लें। अहमदाबाद वापस यात्रा शुरू करें। आप रास्ते में अंबाजी मंदिर में रुक सकते हैं, जो घर वापस आने से पहले एक अंतिम पड़ाव है, जो अद्भुत यादों से भरा हुआ है।"
+                    }
+                ]
+            },
+            gu: {
+                title: "અમારી 5-દિવસીય રોડ ટ્રિપનો પ્રવાસ",
+                days: [
+                    {
+                        title: "દિવસ 1: 22 ઓક્ટોબર - અમદાવાદથી ઉદયપુર",
+                        text: "સવારે અમદાવાદથી પ્રવાસ શરૂ કરો. ઉદયપુરના સુંદર ડ્રાઇવનો આનંદ લો. હોટેલમાં ચેક-ઇન કરો અને જાદુઈ સાંજ માટે તૈયાર થાઓ. ઝળહળતા સિટી પેલેસનું અન્વેષણ કરો અને સુંદર લાઇટ્સ જોવા માટે લેક પિછોલા પર રોમેન્ટિક બોટ રાઇડનો આનંદ લો."
+                    },
+                    {
+                        title: "દિવસ 2: 23 ઓક્ટોબર - ઉદયપુરનું અન્વેષણ",
+                        text: "દિવસ ઉદયપુરમાં ફરવા માટે વિતાવો. રાજવી સિટી પેલેસ, શાંતિપૂર્ણ જગદીશ મંદિર અને સુંદર સહેલિયોં કી બારીની મુલાકાત લો. શહેરના સમૃદ્ધ ઇતિહાસ અને સંસ્કૃતિને અન્વેષણ કરવા માટે દિવસ તમારો છે."
+                    },
+                    {
+                        title: "દિવસ 3: 24 ઓક્ટોબર - ઉદયપુરથી માઉન્ટ આબુ",
+                        text: "ઉદયપુરમાં આરામદાયક સવાર પછી, રાજસ્થાનના એકમાત્ર હિલ સ્ટેશન માઉન્ટ આબુ માટે ડ્રાઇવ કરો. તમારી હોટેલમાં ચેક-ઇન કરો અને પછી સનસેટ પોઈન્ટથી મનોહર સૂર્યાસ્ત જોવા માટે બહાર નીકળો."
+                    },
+                    {
+                        title: "દિવસ 4: 25 ઓક્ટોબર - માઉન્ટ આબુનું અન્વેષણ",
+                        text: "આ દિવસ માઉન્ટ આબુના ટોચના સ્થળો વિશે છે. તેમના જટિલ કોતરણી માટે જાણીતા અદ્ભુત દિલવાડા જૈન મંદિરોની મુલાકાત લો. મનોહર દૃશ્યો માટે ગુરુ શિખર સુધી ડ્રાઇવ કરો અને બ્રહ્મા કુમારીસ પીસ પાર્કમાં આંતરિક શાંતિ મેળવો. સાંજે, નકી તળાવ પર આરામદાયક બોટ રાઇડ કરો."
+                    },
+                    {
+                        title: "દિવસ 5: 26 ઓક્ટોબર - માઉન્ટ આબુથી અમદાવાદ",
+                        text: "માઉન્ટ આબુમાં છેલ્લો નાસ્તો માણવો. અમદાવાદ પાછા પ્રવાસ શરૂ કરો. તમે ઘરે પાછા ફરતા પહેલા, અદ્ભુત યાદોથી ભરપૂર, રસ્તામાં અંબાજી મંદિર પર રોકાઈ શકો છો."
+                    }
+                ]
+            }
+        };
+
+        function togglePlan() {
+            const plan = document.getElementById('detailedPlan');
+            plan.classList.remove('hidden');
+        }
+
+        function changeLanguage() {
+            const language = document.getElementById('languageSelector').value;
+            const content = itinerary[language];
+
+            document.getElementById('itineraryTitle').innerText = content.title;
+            
+            document.getElementById('day1Title').innerText = content.days[0].title;
+            document.getElementById('day1Text').innerText = content.days[0].text;
+            
+            document.getElementById('day2Title').innerText = content.days[1].title;
+            document.getElementById('day2Text').innerText = content.days[1].text;
+            
+            document.getElementById('day3Title').innerText = content.days[2].title;
+            document.getElementById('day3Text').innerText = content.days[2].text;
+
+            document.getElementById('day4Title').innerText = content.days[3].title;
+            document.getElementById('day4Text').innerText = content.days[3].text;
+
+            document.getElementById('day5Title').innerText = content.days[4].title;
+            document.getElementById('day5Text').innerText = content.days[4].text;
+        }
+
+        // Add event listener after the DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('languageSelector').addEventListener('change', changeLanguage);
+        });
+
+    </script>
+</body>
+</html>
